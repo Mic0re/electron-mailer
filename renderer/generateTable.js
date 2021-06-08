@@ -37,7 +37,7 @@ const generateTable = (data) => {
 		const subj = document.createElement('td');
 		subj.innerText = el.subject;
 		const from = document.createElement('td');
-		from.innerText = el.from.text;
+		from.innerText = el.from;
 		const date = document.createElement('td');
 		date.innerText = el.date;
 
