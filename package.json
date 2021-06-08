@@ -4,7 +4,9 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -14,14 +16,29 @@
     "tutorial",
     "demo"
   ],
-  "author": "GitHub",
+  "author": "Mic0re",
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^13.0.1",
+    "electron-builder": "^22.10.5",
     "eslint": "^7.28.0"
   },
   "dependencies": {
     "imap": "^0.8.19",
     "nodemailer": "^6.5.0"
+  },
+  "build": {
+    "appId": "com.electron.app",
+    "win": {
+      "target": [
+        "nsis",
+        "zip"
+      ],
+      "artifactName": "${productName}-${version}-${os}.${ext}"
+    },
+    "portable": {
+      "unicode": false,
+      "artifactName": "my_electron_app.exe"
+    }
   }
 }
